@@ -104,6 +104,8 @@ class CalcCtrl {
 			$this->msgs->addInfo('Parametry poprawne.');
 				
 			//wykonanie operacji
+$this->result->result = ($this->form->kwota *  ($this->form->oprocentowanie / 100 / 12))/ (1 - pow(1 + ($this->form->oprocentowanie / 100 / 12), -($this->form->lata * 12)));
+
 						
 			$this->msgs->addInfo('Wykonano obliczenia.');
 		}
