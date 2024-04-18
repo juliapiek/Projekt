@@ -1,7 +1,7 @@
 {extends file="main.tpl"}
-
+{block name=footer}Strona oferuje prosty kalkulator kredytowy do szybkiego obliczania miesięcznej raty kredytu. Wystarczy wpisać kwotę kredytu, okres spłaty i oprocentowanie, a otrzymasz wynik w kilka chwil, pomagając Ci w planowaniu budżetu i podejmowaniu świadomych decyzji finansowych.{/block}
 {block name=content}
-<form action="{$conf->action_url}login" method="post"  class="pure-form pure-form-aligned bottom-margin">
+<form class="pure-form pure-form-stacked" action="{$conf->action_url}login" method="post">
 	<legend>Logowanie do systemu</legend>
 	<fieldset>
         <div class="pure-control-group">
@@ -13,7 +13,7 @@
 			<input id="id_pass" type="password" name="pass" /><br />
 		</div>
 		<div class="pure-controls">
-			<input type="submit" value="zaloguj" class="pure-button pure-button-primary"/>
+			<button type="submit" class="pure-button pure-button-primary">Oblicz</button>
 		</div>
 	</fieldset>
 </form>	
