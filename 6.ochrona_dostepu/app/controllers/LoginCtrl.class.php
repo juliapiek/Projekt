@@ -101,6 +101,8 @@ class LoginCtrl{
 	public function generateView(){
 		
 		getSmarty()->assign('page_title','Strona logowania');
+                getSmarty()->assign('page_description',' ');
+		getSmarty()->assign('page_header','Kontroler główny');
 		getSmarty()->assign('form',$this->form);
 		getSmarty()->display('LoginView.tpl');		
 	}

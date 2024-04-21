@@ -13,7 +13,7 @@
 			<input id="id_pass" type="password" name="pass" /><br />
 		</div>
 		<div class="pure-controls">
-			<button type="submit" class="pure-button pure-button-primary">Oblicz</button>
+			<button type="submit" class="pure-button pure-button-primary">Zaloguj</button>
 		</div>
 	</fieldset>
 </form>	

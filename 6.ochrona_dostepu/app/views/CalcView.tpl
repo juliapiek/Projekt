@@ -1,39 +1,36 @@
 {extends file="main.tpl"}
-
+{block name=footer}Strona oferuje prosty kalkulator kredytowy do szybkiego obliczania miesięcznej raty kredytu. Wystarczy wpisać kwotę kredytu, okres spłaty i oprocentowanie, a otrzymasz wynik w kilka chwil, pomagając Ci w planowaniu budżetu i podejmowaniu świadomych decyzji finansowych.{/block}
 {block name=content}
 
-<div class="pure-menu pure-menu-horizontal bottom-margin">
+
 	<a href="{$conf->action_url}logout"  class="pure-menu-heading pure-menu-link">wyloguj</a>
 	<span style="float:right;">użytkownik: {$user->login}, rola: {$user->role}</span>
 </div>
 
-<form action="{$conf->action_url}calcCompute" method="post" class="pure-form pure-form-aligned bottom-margin">
-	<legend>Kalkulator kredytowy</legend>
+
+	<h2 class="content-head is-center">Kalkulator kredytowy</h2>
+
+	<div class="l-box-lrg pure-u-1 pure-u-med-2-5">
+<form class="pure-form pure-form-stacked" action="{$conf->action_root}calcCompute" method="post">
 	<fieldset>
-        <div class="pure-control-group">
-			<label for="id_kwota">kwota: </label>
-			<input id="id_kwota" type="text" name="kwota" value="{$form->kwota}" />
-		</div>
-        <div class="pure-control-group">
-			<label for="id_lata">lata: </label>
-			<input id="id_lata" type="text" name="lata" value="{$form->lata}" />
-		</div>
-		<div class="pure-control-group">
-			<label for="id_oprocentowanie">oprocentowanie: </label>
-			<input id="id_oprocentowanie" type="text" name="oprocentowanie" value="{$form->oprocentowanie}" />
-		</div>
-		<div class="pure-controls">
-			<input type="submit" value="Oblicz" class="pure-button pure-button-primary"/>
-		</div>
+		<label for="kwota">kwota</label>
+		<input id="kwota" type="text" placeholder="kwota" name="kwota" value="{$form->kwota}">
+					
+		<label for="lata">lata</label>
+		<input id="lata" type="text" placeholder="lata" name="lata" value="{$form->lata}">
+		
+		<label for="oprocentowanie">oprocentowanie</label>
+		<input id="oprocentowanie" type="text" placeholder="oprocentowanie" name="oprocentowanie" value="{$form->oprocentowanie}">
 	</fieldset>
+	<button type="submit" class="pure-button pure-button-primary">Oblicz</button>
 </form>	
 
 {include file='messages.tpl'}
 
 {if isset($res->result)}
-<div class="messages inf">
-	Wynik: {$res->result}
-</div>
-{/if}
+		<div class="messages inf">
+			Wynik: {$res->result}
+		</div>
+	{/if}
 
 {/block}

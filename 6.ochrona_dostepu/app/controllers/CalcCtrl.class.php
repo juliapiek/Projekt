@@ -116,6 +116,9 @@ if ($this->form->oprocentowanie == "") {
 		getSmarty()->assign('user',$user);
 				
 		getSmarty()->assign('page_title','Kalkulator kredytowy');
+                getSmarty()->assign('page_description',' ');
+                getSmarty()->assign('page_header','Kontroler główny');
+
 
 		getSmarty()->assign('form',$this->form);
 		getSmarty()->assign('res',$this->result);
